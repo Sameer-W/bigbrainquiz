@@ -7,19 +7,23 @@ environment:
   sdk: ">=2.2.2 <3.0.0"
 
 dependencies:
+  auto_size_text: ^2.0.0+2
+  cupertino_icons: ^0.1.2
+  firebase_auth:
+  firebase_core:
+  google_sign_in:
   flutter:
     sdk: flutter
-  cupertino_icons: ^0.1.2
-  font_awesome_flutter: ^8.4.0
-  http: ^0.12.0+2
   flutter_custom_clippers: ^0.1.6
+  font_awesome_flutter: ^8.4.0
   html_unescape: ^1.0.1+2
-  auto_size_text: ^2.0.0+2
+  http: ^0.12.0+2
+  provider:
+  cloud_firestore:
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
 
 flutter:
   uses-material-design: true

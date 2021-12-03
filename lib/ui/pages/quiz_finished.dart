@@ -1,6 +1,8 @@
 import 'package:bigbrainquiz/models/question.dart';
+import 'package:bigbrainquiz/resources/firebase_service.dart';
 import 'package:flutter/material.dart';
-
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'check_answers.dart';
 
 class QuizFinishedPage extends StatelessWidget {
@@ -12,6 +14,7 @@ class QuizFinishedPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final db = Database();
     int correct = 0;
     this.answers.forEach((index, value) {
       if (this.questions[index].correctAnswer == value) correct++;
@@ -100,7 +103,10 @@ class QuizFinishedPage extends StatelessWidget {
                               horizontal: 16.0, vertical: 20.0)),
                     ),
                     child: Text("Goto Home"),
-                    onPressed: () => Navigator.pop(context),
+                    onPressed: () {
+                      db.updateUserScore(correct, questions.length);
+                      return Navigator.pop(context);
+                    },
                   ),
                   ElevatedButton(
                     style: ButtonStyle(

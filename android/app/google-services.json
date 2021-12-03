@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "608104088463",
+    "project_id": "bigbrainquiz",
+    "storage_bucket": "bigbrainquiz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608104088463:android:eff631a36e445ef03601fa",
+        "android_client_info": {
+          "package_name": "com.example.bigbrainquiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608104088463-2ctcum6aq9pek3u7bu87gronmttqvqoe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACDh9HYk-YIJWW-nnToAyIJ_HrVg9aEIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608104088463-2ctcum6aq9pek3u7bu87gronmttqvqoe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,9 +1,12 @@
 import 'package:bigbrainquiz/models/category.dart';
+import 'package:bigbrainquiz/resources/google_sign_in.dart';
+import 'package:bigbrainquiz/ui/widgets/navigation_drawer.dart';
 import 'package:bigbrainquiz/ui/widgets/quiz_options.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   final List<Color> tileColors = [
@@ -22,9 +25,23 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: NavigationDrawerWidget(),
         appBar: AppBar(
+          centerTitle: true,
           title: Text('BigBrain Quiz'),
           elevation: 0,
+          // actions: [
+          //   TextButton(
+          //       onPressed: () {
+          //         final provider =
+          //             Provider.of<GoogleSignInProvider>(context, listen: false);
+          //         provider.logout();
+          //       },
+          //       child: Text(
+          //         'Log out',
+          //         style: TextStyle(color: Colors.white),
+          //       ))
+          // ],
         ),
         body: Stack(
           children: <Widget>[
