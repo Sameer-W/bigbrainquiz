@@ -17,7 +17,10 @@ class LoginPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login Or Signup'),
+        title: Text(
+          'Login Or Signup',
+          style: TextStyle(fontWeight: FontWeight.w600),
+        ),
         elevation: 0,
       ),
       body: Container(
@@ -28,25 +31,54 @@ class LoginPage extends StatelessWidget {
           Theme.of(context).primaryColor,
           Theme.of(context).accentColor
         ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(16.0),
-          child: SizedBox(
-            height: 60,
-            child: ElevatedButton.icon(
-              label: Text('Sign up with google'),
-              icon: FaIcon(FontAwesomeIcons.google, color: Colors.red),
-              style: ElevatedButton.styleFrom(
-                  primary: Colors.white,
-                  onPrimary: Colors.black,
-                  minimumSize: Size(double.infinity, 50)),
-              onPressed: () {
-                final db = Database();
-                final provider =
-                    Provider.of<GoogleSignInProvider>(context, listen: false);
-                provider.googleLogin();
-              },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: 50,
             ),
-          ),
+            Container(
+              width: 200,
+              child: Text(
+                'Hello there, Welcome back to BigBrainQuiz!',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 24,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500),
+              ),
+            ),
+            SizedBox(
+              height: 24,
+            ),
+            FaIcon(
+              FontAwesomeIcons.brain,
+              size: 100,
+              color: Colors.white70,
+            ),
+            SizedBox(
+              height: 32,
+            ),
+            SizedBox(
+              height: 60,
+              width: 350,
+              child: ElevatedButton.icon(
+                label: Text('Log in or sign up with Google'),
+                icon: FaIcon(FontAwesomeIcons.google, color: Colors.red),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    onPrimary: Colors.black,
+                    minimumSize: Size(double.infinity, 50)),
+                onPressed: () {
+                  final db = Database();
+                  final provider =
+                      Provider.of<GoogleSignInProvider>(context, listen: false);
+                  provider.googleLogin();
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );
